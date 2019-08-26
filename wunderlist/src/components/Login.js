@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import PasswordShowHide from "./buttons/ShowHideBtn"
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -47,14 +47,9 @@ class Login extends Component {
               value={this.state.username}
               onChange={this.handleInputChange}
             />
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="PASSWORD"
-              value={this.state.password}
-              onChange={this.handleInputChange}
-            />
+             <PasswordShowHide/>
+            
+           
             <button>LOG IN</button>
             <div>
               <p>or</p>
