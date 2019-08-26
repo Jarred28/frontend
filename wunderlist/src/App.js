@@ -3,7 +3,7 @@ import { Route, Switch, withRouter } from "react-router-dom";
 import axios from "axios";
 import Login from "./components/Login.js";
 import Signup from "./components/Signup.js";
-import Lists from "./components/Lists.js/index.js";
+import Lists from "./components/Lists.js";
 import "./App.css";
 
 axios.defaults.baseURL =

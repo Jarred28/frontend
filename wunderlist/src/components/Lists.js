@@ -7,7 +7,7 @@ class Lists extends Component {
   constructor() {
     super();
     this.state = {
-      Lists: []
+      lists: []
     };
   }
 
@@ -17,7 +17,7 @@ class Lists extends Component {
     axios
       .get("")
       .then(res => {
-        this.setState({ Lists: res.data });
+        this.setState({ lists: res.data });
         console.log("res", res);
       })
       .catch(err => {
@@ -26,7 +26,7 @@ class Lists extends Component {
   }
 
   render() {
-    if (!this.state.Lists.length)
+    if (!this.state.lists.length)
       return (
         <div>
           <h2>Loading...</h2>
@@ -36,10 +36,10 @@ class Lists extends Component {
       <div>
         <div />
         <div>
-          {this.state.Lists.map(Lists => (
-            <div key={classroom.id}>
-              <h2>{Lists.List_name}</h2>
-              <h3>{Lists.type}</h3>
+          {this.state.lists.map(item => (
+            <div key={item.id}>
+              <h2>{item.List_name}</h2>
+              <h3>{item.type}</h3>
             </div>
           ))}
         </div>
