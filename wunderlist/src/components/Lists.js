@@ -24,7 +24,7 @@ class Lists extends Component {
         console.log(err);
       });
   }
-
+ 
   render() {
     if (!this.state.lists.length)
       return (

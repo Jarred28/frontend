@@ -9,7 +9,7 @@ class Login extends Component {
       username: "",
       password: ""
     };
-  }
+  } 
 
   handleLogin = event => {
     event.preventDefault();

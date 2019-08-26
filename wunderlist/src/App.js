@@ -15,7 +15,7 @@ class App extends Component {
     localStorage.removeItem("jwt");
     localStorage.removeItem("username");
     this.props.history.push("/");
-  };
+  }; 
 
   render() {
     return (
