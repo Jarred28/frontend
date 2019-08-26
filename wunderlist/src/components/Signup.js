@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Greeting from "./Greeting";
+import styled from "styled-components"
+
+let OnboardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 2px red solid;
+`
 
 export default class Signup extends Component {
   state = {
@@ -14,7 +22,9 @@ export default class Signup extends Component {
       <div>
         <div>
           <form onSubmit={this.handleSignup}>
-            <h2>SIGNUP</h2>
+            <OnboardContainer>
+            <Greeting />
+            <label>Your name (just want to know that to call you)</label>
             <input
               value={this.state.username}
               onChange={this.handleInputChange}
@@ -22,20 +32,27 @@ export default class Signup extends Component {
               type="text"
               placeholder="USERNAME"
             />
+            <label>Your email address</label>
+            <input
+              value={this.state.email}
+              onChange={this.handleInputChange}
+              id="email"
+              type="email"
+              placeholder="email"
+            />
+            <label>Your new password</label>
             <input
               value={this.state.password}
               onChange={this.handleInputChange}
               id="password"
               type="password"
-              placeholder="PASSWORD"
             />
-
+            <label>Re-enter Password to Confirm</label>
             <input
-              value={this.state.departments}
+              value={this.state.password}
               onChange={this.handleInputChange}
-              id="departments"
-              type="text"
-              placeholder="DEPARTMENT"
+              id="password"
+              type="password"
             />
 
             <button>CREATE ACCOUNT</button>
@@ -44,6 +61,7 @@ export default class Signup extends Component {
                 Already have an account? <Link to="/">Login</Link>
               </p>
             </div>
+            </OnboardContainer>
           </form>
         </div>
       </div>
